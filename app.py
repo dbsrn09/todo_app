@@ -68,7 +68,7 @@ def authenticate(user_id, user_pw):
     conn = connect_db()
     cursor = conn.cursor()
     query = '''
-        SELECT * FROM users WHERE user_id = %s AND user_pw = %s
+        SELECT * FROM user_list WHERE user_id = %s AND user_pw = %s
     '''
     cursor.execute(query, (user_id, user_pw))
     result = cursor.fetchone()
